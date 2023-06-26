@@ -279,7 +279,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  github-pages
+  github-pages (~> 228)
   hamburgers
   jekyll-feed (~> 0.6)
   jekyll-katex
