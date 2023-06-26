@@ -13,7 +13,7 @@ plugins:
   - neat
   - jekyll-feed
   - jekyll-paginate
-  - jekyll/scholar
+  - jekyll-scholar
   - jekyll-katex
 
 scholar:
