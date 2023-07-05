@@ -546,7 +546,7 @@ a.cp[target=_blank]:after {
     right: -2em;
     width: 1.5em;
     height: 1.5em;
-    background-image: url(../images/icon_outbound.svg);
+    background-image: url("{{ '/assets/images/icon_outbound.svg' | prepend: site.github_url }}");
     background-size: 100%;
     content: ""
 }
