@@ -1,29 +1,67 @@
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>
-        {% if page.title %}
-        {{ page.title }} - {{ site.title }}
-        {% else %}
-        {{ site.title }}
-        {% endif %}
-    </title>
-    <meta name="description"
-        content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ page.title }}{% endif %}">
-    <link rel="stylesheet" type="text/css" href="{{ " /assets/css/main.css" | prepend: site.baseurl }}">
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ " /feed.xml" | prepend:
-        site.baseurl | prepend: site.url }}" />
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css"
-        integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js"
-        integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ"
-        crossorigin="anonymous"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js"
-        integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
-        onload="renderMathInElement(document.body);"></script>
+
+  <!-- Google tag (gtag.js?2587233464) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5Z6VW9K02M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-5Z6VW9K02M');
+  </script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+
+  <title>
+    {% if page.title %}
+    {{ page.title }} &#8211; Sony Research
+    {% else %}
+    Sony Research &#8211; We are here for creators to pioneer the future of creation
+    {% endif %}
+  </title>
+
+  <meta name="description"
+    content="Sony Research brings together creators and collaborators to amplify the power of creativity with technology. Our diverse team acts with purpose, dedication and transparency to Pioneer the Future of Creation.">
+
+  <meta name="og:title" content="Sony Research &#8211; We are here for creators to pioneer the future of creation">
+  <meta name="og:description"
+    content="Sony Research brings together creators and collaborators to amplify the power of creativity with technology. Our diverse team acts with purpose, dedication and transparency to Pioneer the Future of Creation.">
+  <meta name="og:type" content="website">
+  <meta name="og:url" content="https://research.sony/">
+  <meta name="og:site_name" content="Sony Research &#8211; We are here for creators to pioneer the future of creation">
+  <meta name="og:image" content="https://research.sony/assets/images/og_image.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sony Research &#8211; We are here for creators to pioneer the future of creation">
+  <meta name="twitter:description"
+    content="Sony Research brings together creators and collaborators to amplify the power of creativity with technology. Our diverse team acts with purpose, dedication and transparency to Pioneer the Future of Creation.">
+  <meta name="twitter:image" content="https://research.sony/assets/images/og_image.jpg">
+
+  <link rel="icon" href="https://research.sony/assets/images/cropped-favicon-32x32.jpg" sizes="32x32">
+  <link rel="icon" href="https://research.sony/assets/images/cropped-favicon-192x192.jpg" sizes="192x192">
+  <link rel="apple-touch-icon" href="https://research.sony/assets/images/cropped-favicon-180x180.jpg">
+
+  <script type="text/javascript" src="//fast.fonts.net/jsapi/5bdae069-9a09-4fa2-8348-527ad707a18a.js"></script>
+
+  <script type="module" crossorigin src="https://research.sony/assets/js/main.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="{{ '/assets/css/main.css' | prepend: site.github_url }}">
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css"
+    integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js"
+    integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ"
+    crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js"
+    integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
 
 </head>
