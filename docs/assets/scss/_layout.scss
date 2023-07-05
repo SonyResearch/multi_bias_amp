@@ -546,7 +546,7 @@ a.cp[target=_blank]:after {
     right: -2em;
     width: 1.5em;
     height: 1.5em;
-    background-image: url("{{ '/assets/images/icon_outbound.svg' | prepend: site.github_url }}");
+    background-image: url(https://sonyresearch.github.io/multi_bias_amp//assets/images/icon_outbound.svg);
     background-size: 100%;
     content: ""
 }
