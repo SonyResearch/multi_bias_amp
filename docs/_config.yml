@@ -1,18 +1,12 @@
-# Site settings
-title: Sony AI
+title: Sony Research Inc.
 description: ""
 baseurl:
 
-# Build settings
 markdown: kramdown
 kramdown:
     math_engine: katex
 
 plugins:
-  - bourbon
-  - neat
-  - jekyll-feed
-  - jekyll-paginate
   - jekyll/scholar
   - jekyll-katex
 
@@ -22,7 +16,6 @@ scholar:
 source: ./
 destination: ./_site
 
-# Sass configuration
 sass:
   sass_dir: assets/scss
   style: compressed

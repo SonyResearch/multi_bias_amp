@@ -2,63 +2,63 @@
 layout: default
 ---
 
-<section class="page-info">
-  <h1>{{ page.title}}</h1>
-  <p class="subtitle">{{ page.subtitle}}</p>
-  <p class="date">{{ page.date | date: "%b. %-d, %Y" }}</p>
+{% assign authors = page.authors | split: ';' %}
+{% assign authorlinks = page.author_links | split: ';' %}
+{% assign affiliations = page.affiliations | split: ';' %}
+{% if page.authors != blank or page.affiliations != blank or page.paper != blank or page.code != blank or page.video
+!= blank or page.dataset != blank %}
+{% endif %}
 
+<h1 class="page-heading">
+  <span id="page-heading-conference">{{ page.conference }}</span>
+  <span id="page-title">{{ page.title }}</span>
+  <span id="page-heading-subtitle">{{ page.subtitle }}</span>
 
-
-
-
-
-  {% assign authors = page.authors | split: ';' %}
-  {% assign authorlinks = page.author_links | split: ';' %}
-  {% assign affiliations = page.affiliations | split: ';' %}
-  {% if page.authors != blank or page.affiliations != blank or page.paper != blank or page.code != blank or page.video
-  != blank or page.dataset != blank %}
-
-
-  {% if page.authors != blank and page.affiliations != blank %}
-
-  <div class="authors-affils-resources">
+  <p id="page-heading-authors" class="cp pb40">
     {% for author in authors %}
-
-    <div class="authors-affils-resources-item">
-      <p><a href={{ authorlinks[forloop.index0] }} target="_blank">{{ author }}</a></p>
-    </div>
-
-    <div class="authors-affils-resources-item">
-      <p>{{ affiliations[forloop.index0] }}</p>
-    </div>
-
-    {% endfor %}
+    {% if authorlinks[forloop.index0] != blank %}
+    <span><a href={{ authorlinks[forloop.index0] }}>{{ author }}</a>, {{ affiliations[forloop.index0] }}</span>
+    {% else %}
+    <span>{{ author }}, {{ affiliations[forloop.index0] }}</span>
     {% endif %}
-  </div>
+    <br>
+    {% endfor %}
+  </p>
 
-  <div class="authors-affils-resources" style="margin-top: 1.5em;">
+  <p id="page-heading-authors" class="cp right tb pt40">
     {% if page.paper != blank or page.code != blank or page.video != blank or page.dataset != blank %}
 
     {% if page.paper != blank %}
-    <span><a href={{page.paper}} target="_blank" class="button"> <i class="fa fa-file-text-o icon"></i> &nbsp;
-        Paper</a>
+    <span><a href={{page.paper}} target="_blank">Read paper</a>
     </span>
+    <br>
+    {% endif %}
+    {% if page.poster != blank %}
+    <span><a href={{page.poster}} target="_blank">View poster</a></span>
+    <br>
     {% endif %}
     {% if page.code != blank %}
-    <span><a href={{page.code}} target="_blank" class="button"> <i class="fa fa-code icon"></i> &nbsp; Code</a></span>
+    <span><a href={{page.code}} target="_blank">View code</a></span>
+    <br>
     {% endif %}
     {% if page.video != blank %}
-    <span><a href={{page.video}} target="_blank" class="button"> <i class="fa fa-video-camera icon"></i> &nbsp;
-        Video</a></span>
+    <span><a href={{page.video}} target="_blank">Watch video</a></span>
+    <br>
     {% endif %}
     {% if page.dataset != blank %}
-    <span><a href={{page.dataset}} target="_blank" class="button"> <i class="fa fa-database icon"></i> &nbsp;
-        Data</a></span>
+    <span><a href={{page.dataset}} target="_blank">Download dataset</a></span>
+    <br>
+    {% endif %}
+    {% if page.bibtex != blank %}
+    <span><a href={{page.bibtex}} target="_blank">Download BibTeX</a></span>
+    <br>
     {% endif %}
 
     {% endif %}
-  </div>
-  {% endif %}
-</section>
+  </p>
 
-{{ content }}
+</h1>
+
+<div class="body-container cp">
+  {{ content }}
+</div>
