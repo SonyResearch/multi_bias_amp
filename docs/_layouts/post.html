@@ -46,12 +46,12 @@ layout: default
     <br>
     {% endif %}
     {% if page.bibtex != blank %}
-    <span><a href={{page.bibtex}} target="_blank">Download BibTeX</a></span>
+    <span><a href="{{ page.bibtex | prepend: page.github_url }}" target="_blank">Download BibTeX</a></span>
     <br>
     {% endif %}
   </p>
   {% endif %}
-
+  
 </h1>
 
 <div class="body-container cp">

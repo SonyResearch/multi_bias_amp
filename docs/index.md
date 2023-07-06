@@ -3,7 +3,7 @@ layout: post
 title: "Men Also Do Laundry: Multi-Attribute Bias Amplification"
 subtitle: "Interpretable metrics for measuring bias amplification from multiple attributes"
 github_url: "https://sonyresearch.github.io/multi_bias_amp"
-image: "{{ '/assets/images/imSitu.png' | prepend: page.github_url }}"
+image: "/assets/images/imSitu.png"
 conference: ICML 2023
 published: true
 authors: "Dora Zhao; Jerone Andrews; Alice Xiang"
@@ -14,7 +14,7 @@ paper: "https://arxiv.org/abs/2210.11924"
 poster: ""
 video: "https://icml.cc/virtual/2023/poster/25124"
 dataset: ""
-bibtex: "{{ '/assets/bib/multi_bias_amp.bib' | prepend: page.github_url }}"
+bibtex: "/assets/bib/multi_bias_amp.bib"
 acknowledgments: This work was funded by Sony Research Inc. We thank William Thong and Julienne LaChance for their helpful comments and suggestions.
 katex: True
 ---
