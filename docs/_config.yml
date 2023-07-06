@@ -1,7 +1,6 @@
 title: Sony Research Inc.
 description: ""
 baseurl: 
-github_url: https://sonyresearch.github.io/multi_bias_amp
 
 markdown: kramdown
 kramdown:
