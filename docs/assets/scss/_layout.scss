@@ -191,7 +191,6 @@ h2 {
 
 .tb {
     border-top: 1px solid #585858;
-
 }
 
 .pt40 {
@@ -407,81 +406,6 @@ textarea {
     top: 0;
     left: 0;
     width: 100%;
-}
-
-.page-header .sony {
-    display: flex;
-    align-items: center;
-    height: 56px;
-    padding: 0 80px;
-    background-color: #000;
-}
-
-.page-header .sony a {
-    display: block;
-}
-
-.page-header .sony a img {
-    display: block;
-    height: 15px;
-}
-
-.page-header .global-navigation {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 64px;
-    padding: 0 80px;
-    border-bottom: 1px solid #585858;
-    background-color: #fff
-}
-
-.page-header .global-navigation>a {
-    width: 83px;
-    padding-top: 2px;
-}
-
-.page-header .global-navigation>a img {
-    display: block
-}
-
-.page-header .global-navigation ul {
-    display: flex
-}
-
-.page-header .global-navigation ul li {
-    margin-left: 40px
-}
-
-.page-header .global-navigation ul a {
-    display: inline-block;
-    position: relative;
-    padding: 3px 0;
-    font-weight: 700;
-    font-size: 1.6rem
-}
-
-.page-header .global-navigation ul a:after {
-    display: block;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background-color: #000;
-    content: "";
-    opacity: 0;
-    transition: opacity .2s
-}
-
-.page-header .global-navigation ul a:active:after,
-.page-header .global-navigation ul a:hover:after {
-    opacity: 1
-}
-
-.page-header .global-navigation button,
-#hamburger-body {
-    display: none
 }
 
 .page-footer {
@@ -757,11 +681,6 @@ ol.reference-text>li:before {
 
 @media screen and (max-width: 1439px) {
 
-    .page-header .sony,
-    .page-header .global-navigation {
-        padding: 0 4.667%
-    }
-
     .reference-container,
     .acknowledge-container {
         flex-wrap: wrap;
@@ -784,14 +703,6 @@ ol.reference-text>li:before {
 
 }
 
-@media screen and (max-width: 1199px) {
-
-    .page-header .sony,
-    .page-header .global-navigation {
-        padding: 0 3.125%
-    }
-}
-
 @media screen and (max-width: 767px) {
     body {
         font-size: 1.5rem
@@ -805,27 +716,15 @@ ol.reference-text>li:before {
         font-size: 2.2rem !important;
     }
 
+    .page-heading {
+        padding-right: 5vw;
+        padding-left: 5vw
+    }
+
+
     .page-heading span {
         max-width: none;
         margin: 0
-    }
-
-    .page-header .sony {
-        height: 48px;
-        padding: 0 24px
-    }
-
-    .page-header .sony a {
-        width: 92px
-    }
-
-    .page-header .global-navigation {
-        height: 56px;
-        padding: 0 0 0 24px
-    }
-
-    .page-header .global-navigation>a {
-        width: 164px
     }
     
     .cp p:not(.ncp),
@@ -868,4 +767,7 @@ ol.reference-text>li:before {
         margin: 0
     }
 
+    #header a img, #footer a img {
+        height: 30px;
+    }
 }
