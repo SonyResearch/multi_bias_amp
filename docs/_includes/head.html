@@ -14,40 +14,28 @@
   <meta name="format-detection" content="telephone=no">
 
   <title>
-    {% if page.title %}
-    {{ page.title }} &#8211; Sony Research
-    {% else %}
-    Sony Research &#8211; We are here for creators to pioneer the future of creation
-    {% endif %}
+    {{ page.title }}
   </title>
 
-  <meta name="description"
-    content="Sony Research brings together creators and collaborators to amplify the power of creativity with technology. Our diverse team acts with purpose, dedication and transparency to Pioneer the Future of Creation.">
+  <meta name="description" content="{{ page.title }}">
 
-  <meta name="og:title" content="Sony Research &#8211; We are here for creators to pioneer the future of creation">
-  <meta name="og:description"
-    content="Sony Research brings together creators and collaborators to amplify the power of creativity with technology. Our diverse team acts with purpose, dedication and transparency to Pioneer the Future of Creation.">
+  <meta name="og:title" content="{{ page.title }} &#8211; {{ page.subtitle }}">
+  <meta name="og:description" content="{{ page.subtitle }}">
   <meta name="og:type" content="website">
-  <meta name="og:url" content="https://research.sony/">
-  <meta name="og:site_name" content="Sony Research &#8211; We are here for creators to pioneer the future of creation">
-  <meta name="og:image" content="https://research.sony/assets/images/og_image.jpg">
+  <meta name="og:url" content="{{ page.github_url }}">
+  <meta name="og:site_name" content="{{ page.title }}">
+  <meta name="og:image" content="{{ page.image | prepend: page.github_url }}">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Sony Research &#8211; We are here for creators to pioneer the future of creation">
-  <meta name="twitter:description"
-    content="Sony Research brings together creators and collaborators to amplify the power of creativity with technology. Our diverse team acts with purpose, dedication and transparency to Pioneer the Future of Creation.">
-  <meta name="twitter:image" content="https://research.sony/assets/images/og_image.jpg">
+  <meta name="twitter:title" content="{{ page.title }}">
+  <meta name="twitter:description" content="{{ page.subtitle }}">
+  <meta name="twitter:image" content="{{ page.image | prepend: page.github_url }}">
 
   <link rel="icon" href="https://research.sony/assets/images/cropped-favicon-32x32.jpg" sizes="32x32">
   <link rel="icon" href="https://research.sony/assets/images/cropped-favicon-192x192.jpg" sizes="192x192">
   <link rel="apple-touch-icon" href="https://research.sony/assets/images/cropped-favicon-180x180.jpg">
 
-  <script type="text/javascript" src="//fast.fonts.net/jsapi/5bdae069-9a09-4fa2-8348-527ad707a18a.js"></script>
-
-  <script type="module" crossorigin src="https://research.sony/assets/js/main.js"></script>
-
-  <link rel="stylesheet" type="text/css" href="{{ '/assets/css/main.css' | prepend: site.github_url }}">
-
+  <link rel="stylesheet" type="text/css" href="{{ '/assets/css/main.css' | prepend: page.github_url }}">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css"
     integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">

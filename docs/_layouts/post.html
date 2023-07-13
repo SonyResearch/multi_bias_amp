@@ -5,9 +5,6 @@ layout: default
 {% assign authors = page.authors | split: ';' %}
 {% assign authorlinks = page.author_links | split: ';' %}
 {% assign affiliations = page.affiliations | split: ';' %}
-{% if page.authors != blank or page.affiliations != blank or page.paper != blank or page.code != blank or page.video
-!= blank or page.dataset != blank %}
-{% endif %}
 
 <h1 class="page-heading">
   <span id="page-heading-conference">{{ page.conference }}</span>
@@ -25,9 +22,8 @@ layout: default
     {% endfor %}
   </p>
 
+  {% if page.paper != blank or page.code != blank or page.video != blank or page.dataset != blank or page.bibtex != blank %}
   <p id="page-heading-authors" class="cp right tb pt40">
-    {% if page.paper != blank or page.code != blank or page.video != blank or page.dataset != blank %}
-
     {% if page.paper != blank %}
     <span><a href={{page.paper}} target="_blank">Read paper</a>
     </span>
@@ -50,13 +46,12 @@ layout: default
     <br>
     {% endif %}
     {% if page.bibtex != blank %}
-    <span><a href={{page.bibtex}} target="_blank">Download BibTeX</a></span>
+    <span><a href="{{ page.bibtex | prepend: page.github_url }}" target="_blank">Download BibTeX</a></span>
     <br>
     {% endif %}
-
-    {% endif %}
   </p>
-
+  {% endif %}
+  
 </h1>
 
 <div class="body-container cp">

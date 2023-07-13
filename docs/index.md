@@ -2,6 +2,8 @@
 layout: post
 title: "Men Also Do Laundry: Multi-Attribute Bias Amplification"
 subtitle: "Interpretable metrics for measuring bias amplification from multiple attributes"
+github_url: "https://sonyresearch.github.io/multi_bias_amp"
+image: "/assets/images/imSitu.png"
 conference: ICML 2023
 published: true
 authors: "Dora Zhao; Jerone Andrews; Alice Xiang"
@@ -12,7 +14,7 @@ paper: "https://arxiv.org/abs/2210.11924"
 poster: ""
 video: "https://icml.cc/virtual/2023/poster/25124"
 dataset: ""
-bibtex: "{{ '/assets/bib/multi_bias_amp.bib' | prepend: site.github_url }}"
+bibtex: "/assets/bib/multi_bias_amp.bib"
 acknowledgments: This work was funded by Sony Research Inc. We thank William Thong and Julienne LaChance for their helpful comments and suggestions.
 katex: True
 ---
@@ -47,7 +49,7 @@ katex: True
         {% endkatexmm %}
     </p>
     <figure class="mb0">
-        <img src="{{ '/assets/images/imSitu.png' | prepend: site.github_url }}"/>
+        <img src="{{ '/assets/images/imSitu.png' | prepend: page.github_url }}"/>
         <figcaption>
             Bias scores (i.e., gender ratios) of the verbs `pouring` and `unloading` as well as location `indoors` in imSitu. While imSitu is skewed `male` for the single attributes, the multi-attributes (e.g., {`pouring`, `indoors`}) are skewed `female`. Note that we have replaced imSitu images with <a href="https://stock.adobe.com/" target="_blank">Adobe Stock</a> images for privacy reasons.
             </figcaption>
@@ -181,7 +183,7 @@ katex: True
 </div>
 {% endif %}
 
-{% if page.authors != acknowledgments %}
+{% if page.acknowledgments != blank %}
 <div class="inner" style="padding-top: 80px;">
   <div class="acknowledge-container">
     <div class="acknowledge-title">
