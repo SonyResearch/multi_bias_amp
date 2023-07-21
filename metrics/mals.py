@@ -2,9 +2,6 @@
 # Code adopted from Wang and Russakovsky (https://github.com/princetonvisualai/directional-bias-amp) 
 
 import numpy as np
-import pickle
-import sys 
-
 from typing import * 
 
 class MALS(): 

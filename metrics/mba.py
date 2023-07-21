@@ -1,11 +1,7 @@
 # Metric code for multi-attribute bias amplification
 
 import numpy as np
-import pickle
-import sys
-
-sys.path.append("../")
-from utils import threshold_preds, conf_interval
+from utils import threshold_preds
 
 from typing import *
 from tqdm import tqdm
@@ -22,6 +18,20 @@ class MBA:
         k: int = 1,
         calib: bool = True,
     ):
+        """
+            Symbols: 
+            N = number of instances
+            G = number of groups 
+            A = number of attributes
+
+            Input:
+            train_groups: mapping from instance to one-hot encoded group (dim: N x G)
+            train_atts: mapping from instance to attributes (dim: N x A)
+            preds: predictions per instance (dim: N x (A + G))
+            thresh: minimum number of times an attribute group should occur 
+            k: minimum attribute group size
+            calib: whether we calibrate scores based on val set (True) or round the scores (False)
+        """
         self.num_groups = num_groups
         self.k = k
 
@@ -41,10 +51,10 @@ class MBA:
         else:
             scores = np.round(preds["scores"])
 
-        self.pred_atts = scores[:, num_groups - 1 :]
-        self.pred_group = scores[:, : num_groups - 1]
+        self.pred_atts = scores[:, num_groups :]
+        self.pred_group = scores[:, : num_groups]
         self.pred_labels = preds["labels"]
-        self.pred_task_labels = self.pred_labels[:, num_groups - 1 :]
+        self.pred_task_labels = self.pred_labels[:, num_groups:]
 
         self.multi_atts = self.get_multiatts(thresh)
 
@@ -80,7 +90,7 @@ class MBA:
             return indices
 
         num_attributes = len(self.multi_atts)
-        bog = np.zeros((num_attributes, self.num_groups - 1))
+        bog = np.zeros((num_attributes, self.num_groups))
         if group.shape[1] == 1:
             group = group.flatten()
         else:
@@ -92,7 +102,7 @@ class MBA:
             select_atts = atts_list[total_indices]
             group_atts = group[total_indices]
 
-            for g in range(self.num_groups - 1):
+            for g in range(self.num_groups):
                 select = select_atts[np.where(group_atts == g)]
                 try:
                     bog[index][g] = len(select) / total
@@ -148,7 +158,7 @@ class MBA:
         """
 
         # y_gm calculation
-        groups = self.num_groups - 1
+        groups = self.num_groups
         multi_att_num = len(self.multi_atts)
         p_at = np.zeros((groups, multi_att_num))
         p_a_p_t = np.zeros((groups, multi_att_num))
@@ -215,7 +225,7 @@ class MBA:
         """
 
         # y_gm calculation
-        groups = self.num_groups - 1
+        groups = self.num_groups
         multi_att_num = len(self.multi_atts)
         p_at = np.zeros((groups, multi_att_num))
         p_a_p_t = np.zeros((groups, multi_att_num))

@@ -6,9 +6,6 @@ import numpy as np
 import pickle
 import typing 
 from decimal import Decimal
-
-import sys 
-sys.path.append('../')
 from utils import threshold_preds
 
 # Note: in our work attributes are equivalent to "task" in Wang and Russakovsky's paper and group membership is equivalent to "attribute"
