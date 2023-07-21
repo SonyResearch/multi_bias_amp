@@ -24,6 +24,21 @@ All of the necessary code files are in ``metrics/``. There are three metrics we 
 - ``dba.py``: Directed multi-attribute bias amplification from [Wang and Russakovsky](https://proceedings.mlr.press/v139/wang21t.html)
 - ``mba.py``: Undirected and directed multi-attribute bias amplficiation
 
+## Misc
+To train a multi-attribute classifier, use the files in ``src`` as follows:
+
+Train Classifier: 
+```
+python train.py --labels_train $TRAIN_LABELS --labels_val $VAL_LABELS --nepoch $NUM_EPOCHS \
+--nclasses $NUM_ATTS --outdir $OUTDIR 
+```
+
+Evaluate Classifier: 
+```
+python evaluate.py --labels_val $VAL_LABELS --labels_test $TEST_LABELS --modelpath $MODELPATH \
+--nclasses $NUM_ATTS --outfile $OUTFILE
+```
+
 ## Bibtex 
 
 ```
