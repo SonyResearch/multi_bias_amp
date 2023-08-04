@@ -20,9 +20,9 @@ Requirements include Python >=3.6, numpy, scikit-learn, and tqdm.
 
 All of the necessary code files are in ``metrics/``. There are three metrics we provide the implementations for as follows:
 
-- ``mals.py``: Undirected multi-attribute bias amplification from [Zhao et al.](https://aclanthology.org/D17-1323/)
-- ``dba.py``: Directed multi-attribute bias amplification from [Wang and Russakovsky](https://proceedings.mlr.press/v139/wang21t.html)
-- ``mba.py``: Undirected and directed multi-attribute bias amplficiation
+- ``mba.py``: Undirected and directed **multi-attribute** bias amplficiation ([ours](https://arxiv.org/abs/2210.11924))
+- ``mals.py``: Undirected single-attribute bias amplification from [Zhao et al.](https://aclanthology.org/D17-1323/)
+- ``dba.py``: Directed single-attribute bias amplification from [Wang and Russakovsky](https://proceedings.mlr.press/v139/wang21t.html)
 
 ## Misc
 To train a multi-attribute classifier, use the files in ``src`` as follows:
